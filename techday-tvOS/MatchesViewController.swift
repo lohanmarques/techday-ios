@@ -12,7 +12,9 @@ private let reuseIdentifier = "Cell"
 class MatchesViewController: UICollectionViewController {
     var matches: [Match]? {
         didSet {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
 

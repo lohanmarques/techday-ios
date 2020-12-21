@@ -15,8 +15,10 @@ class PlayerViewController: AVPlayerViewController {
                 return
             }
 
-            self.player = AVPlayer(url: videoURL)
-            self.player?.play()
+            DispatchQueue.main.async {
+                self.player = AVPlayer(url: videoURL)
+                self.player?.play()
+            }
         }
     }
 
