@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class LiveViewController: UIViewController {
     lazy var viewModel: ViewModel = ViewModel()
 
     weak var playerViewController: PlayerViewController?
@@ -22,10 +22,10 @@ final class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "EmbedPlayerViewController":
+        case Constants.playerVCSegue:
             self.playerViewController = segue.destination as? PlayerViewController
 
-        case "EmbedMatchesViewController":
+        case Constants.matchesVCSegue:
             self.matchesViewController = segue.destination as? MatchesViewController
 
         default:
@@ -34,7 +34,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController: MatchesDelegates {
+extension LiveViewController: MatchesDelegates {
     func matchesDidChange() {
         self.matchesViewController?.matches = self.viewModel.matches
     }

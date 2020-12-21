@@ -12,6 +12,9 @@ class LiveViewController: UIViewController {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var matchesCollectionView: UICollectionView!
     
+    weak var playerViewController: PlayerViewController?
+    weak var matchesViewController: MatchesViewController?
+    
     lazy var viewModel: ViewModel = ViewModel()
     
     override func viewDidLoad() {
@@ -21,12 +24,17 @@ class LiveViewController: UIViewController {
         viewModel.fetchMatches()
     }
     
-    private func updateCollection() {
-        
-    }
-    
-    private func updatePlayer() {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case Constants.playerVCSegue:
+            self.playerViewController = segue.destination as? PlayerViewController
+
+        case Constants.matchesVCSegue:
+            self.matchesViewController = segue.destination as? MatchesViewController
+
+        default:
+            break
+        }
     }
 }
 
@@ -34,32 +42,18 @@ class LiveViewController: UIViewController {
 extension LiveViewController: MatchesDelegates {
     
     func matchesDidChange() {
-        self.updateCollection()
+        self.matchesViewController?.matches = self.viewModel.matches
     }
 
     func selectedMatchDidChange() {
-        self.updatePlayer()
-    }
-}
+        guard let match = self.viewModel.selectedMatch else {
+            return
+        }
 
-// MARK: COLLECTION VIEW DATASOURCE
-extension LiveViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.matches.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellName = String(describing: MatchCell.self)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
-    }
-}
+        guard let videoURL = Bundle.main.url(forResource: "\(match.home)-\(match.away)", withExtension: "mp4") else {
+            return
+        }
 
-// MARK: COLLECTION VIEW DELEGATE
-extension LiveViewController: UICollectionViewDelegate {
-    
+        self.playerViewController?.videoURL = videoURL
+    }
 }
