@@ -1,0 +1,58 @@
+{
+  "matches": [
+    {
+      "home": "cam",
+      "away": "bot",
+      "score": "2 x 1",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "acg",
+      "away": "int",
+      "score": "0 x 0",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "bah",
+      "away": "sao",
+      "score": "1 x 3",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "cfc",
+      "away": "cor",
+      "score": "0 x 1",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "flu",
+      "away": "bgt",
+      "score": "0 x 0",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "for",
+      "away": "goi",
+      "score": "1 x 1",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "pal",
+      "away": "atl",
+      "score": "3 x 0",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "san",
+      "away": "spt",
+      "score": "1 x 1",
+      "tournament": "Campeonato Brasileiro"
+    },
+    {
+      "home": "vas",
+      "away": "cea",
+      "score": "1 x 4",
+      "tournament": "Campeonato Brasileiro"
+    }
+  ]
+}
