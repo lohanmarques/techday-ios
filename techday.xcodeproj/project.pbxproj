@@ -72,6 +72,7 @@
 		E23244462590EFFF0041C4FC /* logo-acg.png in Resources */ = {isa = PBXBuildFile; fileRef = E23244232590EFFF0041C4FC /* logo-acg.png */; };
 		E23244472590EFFF0041C4FC /* logo-bgt.png in Resources */ = {isa = PBXBuildFile; fileRef = E23244242590EFFF0041C4FC /* logo-bgt.png */; };
 		E23244482590EFFF0041C4FC /* logo-bgt.png in Resources */ = {isa = PBXBuildFile; fileRef = E23244242590EFFF0041C4FC /* logo-bgt.png */; };
+		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		E23244222590EFFF0041C4FC /* logo-vas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-vas.png"; sourceTree = "<group>"; };
 		E23244232590EFFF0041C4FC /* logo-acg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-acg.png"; sourceTree = "<group>"; };
 		E23244242590EFFF0041C4FC /* logo-bgt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-bgt.png"; sourceTree = "<group>"; };
+		EBBE2FBD25910FFC005290DB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				E23243C42590E49F0041C4FC /* techday */,
 				E23243F52590EFCA0041C4FC /* techday-tvOS */,
+				EBBE2FB725910679005290DB /* shared */,
 				E23243C32590E49F0041C4FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,18 +168,18 @@
 				E23243CE2590E4A00041C4FC /* Assets.xcassets */,
 				E23243D02590E4A00041C4FC /* LaunchScreen.storyboard */,
 				E23243D32590E4A00041C4FC /* Info.plist */,
-				E23243DA2590EA9D0041C4FC /* mocks */,
 			);
 			path = techday;
 			sourceTree = "<group>";
 		};
-		E23243DA2590EA9D0041C4FC /* mocks */ = {
+		E23243DA2590EA9D0041C4FC /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				EBBE2FBB25910FC3005290DB /* mocks */,
 				E23243EF2590EF710041C4FC /* logos */,
 				E23243DB2590EAB90041C4FC /* videos */,
 			);
-			path = mocks;
+			path = resources;
 			sourceTree = "<group>";
 		};
 		E23243DB2590EAB90041C4FC /* videos */ = {
@@ -231,6 +234,39 @@
 				E23244022590EFCB0041C4FC /* Info.plist */,
 			);
 			path = "techday-tvOS";
+			sourceTree = "<group>";
+		};
+		EBBE2FB725910679005290DB /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				E23243DA2590EA9D0041C4FC /* resources */,
+				EBBE2FB8259106A0005290DB /* code */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+		EBBE2FB8259106A0005290DB /* code */ = {
+			isa = PBXGroup;
+			children = (
+				EBBE2FBC25910FD2005290DB /* repositories */,
+			);
+			path = code;
+			sourceTree = "<group>";
+		};
+		EBBE2FBB25910FC3005290DB /* mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = mocks;
+			path = ../mocks/mocks;
+			sourceTree = "<group>";
+		};
+		EBBE2FBC25910FD2005290DB /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				EBBE2FBD25910FFC005290DB /* Repository.swift */,
+			);
+			path = repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +427,7 @@
 				E23243CA2590E49F0041C4FC /* ViewController.swift in Sources */,
 				E23243C62590E49F0041C4FC /* AppDelegate.swift in Sources */,
 				E23243C82590E49F0041C4FC /* SceneDelegate.swift in Sources */,
+				EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
