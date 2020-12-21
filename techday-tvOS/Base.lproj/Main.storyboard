@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17506" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,14 +23,14 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndr-kE-fiI">
                                 <rect key="frame" x="80" y="60" width="1760" height="960"/>
                                 <connections>
-                                    <segue destination="MKH-XK-wVL" kind="embed" id="LHO-XL-9uU"/>
+                                    <segue destination="MKH-XK-wVL" kind="embed" identifier="EmbedPlayerViewController" id="LHO-XL-9uU"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3p-og-n87">
                                 <rect key="frame" x="96" y="814" width="1728" height="183"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="Q3S-wl-3qC" kind="embed" id="1bQ-rH-u0x"/>
+                                    <segue destination="Q3S-wl-3qC" kind="embed" identifier="EmbedMatchesViewController" id="1bQ-rH-u0x"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -54,7 +54,7 @@
                 <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="MKH-XK-wVL" customClass="PlayerViewController" customModule="techday_tvOS" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKU-f6-aAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-32" y="1581"/>
+            <point key="canvasLocation" x="-332" y="1916"/>
         </scene>
         <!--Matches View Controller-->
         <scene sceneID="gXf-EC-V1o">
@@ -90,7 +90,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bon-2a-Gn1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62" y="2384"/>
+            <point key="canvasLocation" x="1501" y="1786"/>
         </scene>
     </scenes>
 </document>
