@@ -7,10 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LiveViewController: UIViewController {
+    
+    @IBOutlet weak var playerView: UIView!
+    @IBOutlet weak var matchesCollectionView: UICollectionView!
     
     lazy var viewModel: ViewModel = ViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +30,8 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: MatchesDelegates {
+// MARK: DELEGATE
+extension LiveViewController: MatchesDelegates {
     
     func matchesDidChange() {
         self.updateCollection()
@@ -36,4 +40,26 @@ extension ViewController: MatchesDelegates {
     func selectedMatchDidChange() {
         self.updatePlayer()
     }
+}
+
+// MARK: COLLECTION VIEW DATASOURCE
+extension LiveViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.matches.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellName = String(describing: MatchCell.self)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath)
+    }
+}
+
+// MARK: COLLECTION VIEW DELEGATE
+extension LiveViewController: UICollectionViewDelegate {
+    
 }
