@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,23 +27,58 @@
                                                     <segue destination="sea-cn-qIP" kind="embed" identifier="EmbedPlayerViewController" id="vRV-7c-3RY"/>
                                                 </connections>
                                             </containerView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wcf-bv-vQd">
+                                                <rect key="frame" x="20" y="418" width="394" height="20"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nV8-hv-m02">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="live-icon" translatesAutoresizingMaskIntoConstraints="NO" id="isX-tV-hDY">
+                                                                <rect key="frame" x="0.0" y="2.5" width="20" height="15"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="20" id="U89-sp-oUh"/>
+                                                                    <constraint firstAttribute="height" constant="15" id="h1L-YS-ILB"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="isX-tV-hDY" firstAttribute="centerY" secondItem="nV8-hv-m02" secondAttribute="centerY" id="7W8-mP-4es"/>
+                                                            <constraint firstItem="isX-tV-hDY" firstAttribute="centerX" secondItem="nV8-hv-m02" secondAttribute="centerX" id="FYv-ej-Uad"/>
+                                                            <constraint firstAttribute="width" constant="20" id="uqi-YH-10b"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jogos ao vivo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6y-Hp-Kri">
+                                                        <rect key="frame" x="30" y="0.0" width="364" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Ano-Ao-hx6"/>
+                                                </constraints>
+                                            </stackView>
                                             <containerView opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-gW-UBP">
-                                                <rect key="frame" x="0.0" y="423" width="414" height="224"/>
+                                                <rect key="frame" x="0.0" y="438" width="414" height="224"/>
                                                 <connections>
                                                     <segue destination="8Pg-np-P4B" kind="embed" identifier="EmbedMatchesViewController" id="zDj-4p-Hs9"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Wcf-bv-vQd" firstAttribute="top" secondItem="Agx-lN-WcD" secondAttribute="bottom" constant="15" id="8oL-LI-iWV"/>
                                             <constraint firstItem="tVq-gW-UBP" firstAttribute="leading" secondItem="Agx-lN-WcD" secondAttribute="leading" id="9bh-Oy-dde"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="height" secondItem="cNn-7R-Fy7" secondAttribute="height" multiplier="0.45" id="BCY-EK-P7h"/>
                                             <constraint firstAttribute="trailing" secondItem="Agx-lN-WcD" secondAttribute="trailing" id="DYd-9T-cfc"/>
+                                            <constraint firstItem="Wcf-bv-vQd" firstAttribute="leading" secondItem="Agx-lN-WcD" secondAttribute="leading" constant="20" id="QId-6Q-GlO"/>
                                             <constraint firstItem="tVq-gW-UBP" firstAttribute="height" secondItem="cNn-7R-Fy7" secondAttribute="height" multiplier="0.25" id="fCr-Rw-fYA"/>
-                                            <constraint firstItem="tVq-gW-UBP" firstAttribute="top" secondItem="Agx-lN-WcD" secondAttribute="bottom" constant="20" id="fLT-N1-WHa"/>
+                                            <constraint firstItem="Wcf-bv-vQd" firstAttribute="trailing" secondItem="Agx-lN-WcD" secondAttribute="trailing" id="h9K-Hw-j2o"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="top" secondItem="cNn-7R-Fy7" secondAttribute="top" id="iM4-fX-Unt"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="width" secondItem="cNn-7R-Fy7" secondAttribute="width" id="mk1-QQ-efL"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="leading" secondItem="cNn-7R-Fy7" secondAttribute="leading" id="qFN-em-m5k"/>
+                                            <constraint firstItem="tVq-gW-UBP" firstAttribute="top" secondItem="Wcf-bv-vQd" secondAttribute="bottom" id="qk7-Aa-9ZL"/>
                                             <constraint firstItem="tVq-gW-UBP" firstAttribute="trailing" secondItem="Agx-lN-WcD" secondAttribute="trailing" id="yWn-rO-spE"/>
                                         </constraints>
                                     </view>
@@ -62,7 +96,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8Hh-eF-shj" secondAttribute="bottom" id="64K-Uh-VO3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Hh-eF-shj" secondAttribute="trailing" id="BmV-Xl-DXU"/>
@@ -91,12 +125,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yNk-Y1-TPv">
-                            <size key="itemSize" width="150" height="180"/>
-                            <size key="estimatedItemSize" width="300" height="180"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gP9-Ek-s4d">
+                            <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells/>
                         <connections>
@@ -107,12 +140,10 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEg-PT-C4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="301"/>
+            <point key="canvasLocation" x="1177" y="346"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="live-icon" width="20.5" height="14.5"/>
     </resources>
 </document>
