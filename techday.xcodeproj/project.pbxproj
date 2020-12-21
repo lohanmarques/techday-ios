@@ -75,7 +75,6 @@
 		E2977D2E259118F4001C8E16 /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = E2977D2D259118F4001C8E16 /* matches.json */; };
 		E2977D2F259118F4001C8E16 /* matches.json in Resources */ = {isa = PBXBuildFile; fileRef = E2977D2D259118F4001C8E16 /* matches.json */; };
 		E2977D3525911A30001C8E16 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3425911A30001C8E16 /* ViewModel.swift */; };
-		E2977D3625911A30001C8E16 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3425911A30001C8E16 /* ViewModel.swift */; };
 		E2977D3B25911B37001C8E16 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3A25911B37001C8E16 /* Match.swift */; };
 		E2977D3C25911B37001C8E16 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3A25911B37001C8E16 /* Match.swift */; };
 		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
@@ -173,7 +172,6 @@
 				E23243C52590E49F0041C4FC /* AppDelegate.swift */,
 				E23243C72590E49F0041C4FC /* SceneDelegate.swift */,
 				E23243C92590E49F0041C4FC /* ViewController.swift */,
-				E2977D3425911A30001C8E16 /* ViewModel.swift */,
 				E23243CB2590E49F0041C4FC /* Main.storyboard */,
 				E23243CE2590E4A00041C4FC /* Assets.xcassets */,
 				E23243D02590E4A00041C4FC /* LaunchScreen.storyboard */,
@@ -283,6 +281,7 @@
 		EBBE2FBC25910FD2005290DB /* data */ = {
 			isa = PBXGroup;
 			children = (
+				E2977D3425911A30001C8E16 /* ViewModel.swift */,
 				EBBE2FBD25910FFC005290DB /* Repository.swift */,
 			);
 			path = data;
@@ -459,7 +458,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E23243F92590EFCA0041C4FC /* ViewController.swift in Sources */,
-				E2977D3625911A30001C8E16 /* ViewModel.swift in Sources */,
 				E23243F72590EFCA0041C4FC /* AppDelegate.swift in Sources */,
 				E2977D3C25911B37001C8E16 /* Match.swift in Sources */,
 			);
