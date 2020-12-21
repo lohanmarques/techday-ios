@@ -9,7 +9,9 @@ import UIKit
 
 final class ViewController: UIViewController {
     lazy var viewModel: ViewModel = ViewModel()
+
     weak var playerViewController: PlayerViewController?
+    weak var matchesViewController: MatchesViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,9 @@ final class ViewController: UIViewController {
         case "EmbedPlayerViewController":
             self.playerViewController = segue.destination as? PlayerViewController
 
+        case "EmbedMatchesViewController":
+            self.matchesViewController = segue.destination as? MatchesViewController
+
         default:
             break
         }
@@ -31,7 +36,7 @@ final class ViewController: UIViewController {
 
 extension ViewController: MatchesDelegates {
     func matchesDidChange() {
-        print(self.viewModel.matches)
+        self.matchesViewController?.matches = self.viewModel.matches
     }
 
     func selectedMatchDidChange() {
