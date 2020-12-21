@@ -79,11 +79,12 @@
 		E2977D3525911A30001C8E16 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3425911A30001C8E16 /* ViewModel.swift */; };
 		E2977D3B25911B37001C8E16 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3A25911B37001C8E16 /* Match.swift */; };
 		E2977D3C25911B37001C8E16 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3A25911B37001C8E16 /* Match.swift */; };
-		E2977D5925912D4D001C8E16 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D5825912D4D001C8E16 /* MatchCell.swift */; };
 		E2977D6F25913C40001C8E16 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FD125912EA6005290DB /* PlayerViewController.swift */; };
 		E2977D7A25913CC3001C8E16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D7925913CC3001C8E16 /* Constants.swift */; };
 		E2977D7B25913CC3001C8E16 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D7925913CC3001C8E16 /* Constants.swift */; };
 		E2977D8225913D69001C8E16 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58211B259128C000E190B4 /* MatchesViewController.swift */; };
+		E2977DAE25915366001C8E16 /* MatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2977DAC25915366001C8E16 /* MatchCell.xib */; };
+		E2977DAF25915366001C8E16 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DAD25915366001C8E16 /* MatchCell.swift */; };
 		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		EBBE2FD225912EA6005290DB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FD125912EA6005290DB /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -134,8 +135,9 @@
 		E2977D2D259118F4001C8E16 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
 		E2977D3425911A30001C8E16 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E2977D3A25911B37001C8E16 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
-		E2977D5825912D4D001C8E16 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		E2977D7925913CC3001C8E16 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E2977DAC25915366001C8E16 /* MatchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MatchCell.xib; sourceTree = "<group>"; };
+		E2977DAD25915366001C8E16 /* MatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		EBBE2FBD25910FFC005290DB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EBBE2FD125912EA6005290DB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,7 +184,8 @@
 			children = (
 				E23243C52590E49F0041C4FC /* AppDelegate.swift */,
 				E23243C92590E49F0041C4FC /* LiveViewController.swift */,
-				E2977D5825912D4D001C8E16 /* MatchCell.swift */,
+				E2977DAD25915366001C8E16 /* MatchCell.swift */,
+				E2977DAC25915366001C8E16 /* MatchCell.xib */,
 				E23243CB2590E49F0041C4FC /* Main.storyboard */,
 				E23243CE2590E4A00041C4FC /* Assets.xcassets */,
 				E23243D02590E4A00041C4FC /* LaunchScreen.storyboard */,
@@ -398,6 +401,7 @@
 				E232442F2590EFFF0041C4FC /* logo-spt.png in Resources */,
 				E23244292590EFFF0041C4FC /* logo-atl.png in Resources */,
 				E232443B2590EFFF0041C4FC /* logo-cfc.png in Resources */,
+				E2977DAE25915366001C8E16 /* MatchCell.xib in Resources */,
 				E23244312590EFFF0041C4FC /* logo-bot.png in Resources */,
 				E23244392590EFFF0041C4FC /* logo-goi.png in Resources */,
 				E23244372590EFFF0041C4FC /* logo-for.png in Resources */,
@@ -466,12 +470,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2977DAF25915366001C8E16 /* MatchCell.swift in Sources */,
 				E2977D3525911A30001C8E16 /* ViewModel.swift in Sources */,
 				E23243CA2590E49F0041C4FC /* LiveViewController.swift in Sources */,
 				E23243C62590E49F0041C4FC /* AppDelegate.swift in Sources */,
 				E2977D8225913D69001C8E16 /* MatchesViewController.swift in Sources */,
 				E2977D6F25913C40001C8E16 /* PlayerViewController.swift in Sources */,
-				E2977D5925912D4D001C8E16 /* MatchCell.swift in Sources */,
 				EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */,
 				E2977D3B25911B37001C8E16 /* Match.swift in Sources */,
 				E2977D7A25913CC3001C8E16 /* Constants.swift in Sources */,

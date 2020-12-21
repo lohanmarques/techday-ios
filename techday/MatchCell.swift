@@ -16,4 +16,20 @@ final class MatchCell: UICollectionViewCell {
     @IBOutlet weak var awayLogo: UIImageView!
     @IBOutlet weak var awayTeam: UILabel!
     
+    func configure(_ match: Match) {
+        score.text = match.score
+        tournament.text = match.tournament.uppercased()
+        homeTeam.text = match.home.uppercased()
+        awayTeam.text = match.away.uppercased()
+        homeLogo.image = setImage(for: match.home)
+        awayLogo.image = setImage(for: match.away)
+    }
+    
+    private func setImage(for name: String) -> UIImage? {
+        guard let path = Bundle.main.path(forResource: "logo-\(name)", ofType: "png") else {
+            return nil
+        }
+        
+        return UIImage(contentsOfFile: path)
+    }
 }
