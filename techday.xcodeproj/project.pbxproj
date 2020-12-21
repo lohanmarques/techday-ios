@@ -11,8 +11,7 @@
 		8F582116259127BB00E190B4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		8F58211C259128C000E190B4 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58211B259128C000E190B4 /* MatchesViewController.swift */; };
 		E23243C62590E49F0041C4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23243C52590E49F0041C4FC /* AppDelegate.swift */; };
-		E23243C82590E49F0041C4FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23243C72590E49F0041C4FC /* SceneDelegate.swift */; };
-		E23243CA2590E49F0041C4FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23243C92590E49F0041C4FC /* ViewController.swift */; };
+		E23243CA2590E49F0041C4FC /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23243C92590E49F0041C4FC /* LiveViewController.swift */; };
 		E23243CD2590E49F0041C4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23243CB2590E49F0041C4FC /* Main.storyboard */; };
 		E23243CF2590E4A00041C4FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E23243CE2590E4A00041C4FC /* Assets.xcassets */; };
 		E23243D22590E4A00041C4FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23243D02590E4A00041C4FC /* LaunchScreen.storyboard */; };
@@ -80,6 +79,8 @@
 		E2977D3525911A30001C8E16 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3425911A30001C8E16 /* ViewModel.swift */; };
 		E2977D3B25911B37001C8E16 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3A25911B37001C8E16 /* Match.swift */; };
 		E2977D3C25911B37001C8E16 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3A25911B37001C8E16 /* Match.swift */; };
+		E2977D5925912D4D001C8E16 /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D5825912D4D001C8E16 /* MatchCell.swift */; };
+		E2977D5F25913B3B001C8E16 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D5E25913B3B001C8E16 /* PlayerViewController.swift */; };
 		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		EBBE2FD225912EA6005290DB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FD125912EA6005290DB /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -88,8 +89,7 @@
 		8F58211B259128C000E190B4 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
 		E23243C22590E49F0041C4FC /* techday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = techday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23243C52590E49F0041C4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E23243C72590E49F0041C4FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E23243C92590E49F0041C4FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E23243C92590E49F0041C4FC /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		E23243CC2590E49F0041C4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E23243CE2590E4A00041C4FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E23243D12590E4A00041C4FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,6 +131,8 @@
 		E2977D2D259118F4001C8E16 /* matches.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matches.json; sourceTree = "<group>"; };
 		E2977D3425911A30001C8E16 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E2977D3A25911B37001C8E16 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		E2977D5825912D4D001C8E16 /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		E2977D5E25913B3B001C8E16 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		EBBE2FBD25910FFC005290DB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EBBE2FD125912EA6005290DB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,8 +178,9 @@
 			isa = PBXGroup;
 			children = (
 				E23243C52590E49F0041C4FC /* AppDelegate.swift */,
-				E23243C72590E49F0041C4FC /* SceneDelegate.swift */,
-				E23243C92590E49F0041C4FC /* ViewController.swift */,
+				E23243C92590E49F0041C4FC /* LiveViewController.swift */,
+				E2977D5E25913B3B001C8E16 /* PlayerViewController.swift */,
+				E2977D5825912D4D001C8E16 /* MatchCell.swift */,
 				E23243CB2590E49F0041C4FC /* Main.storyboard */,
 				E23243CE2590E4A00041C4FC /* Assets.xcassets */,
 				E23243D02590E4A00041C4FC /* LaunchScreen.storyboard */,
@@ -453,9 +456,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2977D3525911A30001C8E16 /* ViewModel.swift in Sources */,
-				E23243CA2590E49F0041C4FC /* ViewController.swift in Sources */,
+				E23243CA2590E49F0041C4FC /* LiveViewController.swift in Sources */,
 				E23243C62590E49F0041C4FC /* AppDelegate.swift in Sources */,
-				E23243C82590E49F0041C4FC /* SceneDelegate.swift in Sources */,
+				E2977D5F25913B3B001C8E16 /* PlayerViewController.swift in Sources */,
+				E2977D5925912D4D001C8E16 /* MatchCell.swift in Sources */,
 				EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */,
 				E2977D3B25911B37001C8E16 /* Match.swift in Sources */,
 			);
