@@ -8,14 +8,20 @@
 import UIKit
 import AVKit
 
+protocol FullscreenDelegate: class {
+    func backToLiveVC(with time: CMTime?)
+}
+
 final class FullScreenViewController: UIViewController {
     
     @IBOutlet weak var fullscreenImage: UIImageView!
     @IBOutlet weak var pauseAndPlayImage: UIImageView!
     
     weak var playerViewController: PlayerViewController!
+    weak var delegate: FullscreenDelegate?
     
     var videoURL: URL?
+    var currentTime: CMTime?
     let tapFullscreen: UITapGestureRecognizer = UITapGestureRecognizer()
     let tapPauseAndPlay: UITapGestureRecognizer = UITapGestureRecognizer()
     
@@ -46,6 +52,7 @@ final class FullScreenViewController: UIViewController {
         if let playerVC = segue.destination as? PlayerViewController {
             playerViewController = playerVC
             playerVC.videoURL = videoURL
+            playerVC.currentTime = currentTime
         }
     }
     
@@ -65,6 +72,7 @@ final class FullScreenViewController: UIViewController {
     
     @objc func leaveFullscreen() {
         navigationController?.popViewController(animated: true)
+        self.delegate?.backToLiveVC(with: playerViewController.getCurrentTime())
     }
     
     @objc func pauseAndPlayVideo() {

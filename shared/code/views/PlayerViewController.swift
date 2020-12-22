@@ -23,6 +23,18 @@ class PlayerViewController: AVPlayerViewController {
     }
     
     var isPlaying: Bool!
+    
+    var currentTime: CMTime? {
+        didSet {
+            guard let time = self.currentTime else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.player?.seek(to: time)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +56,10 @@ class PlayerViewController: AVPlayerViewController {
     func replay() {
         self.player?.seek(to: .zero)
         self.play()
+    }
+    
+    func getCurrentTime() -> CMTime? {
+        self.player?.currentTime()
     }
     
     private func setUI() {

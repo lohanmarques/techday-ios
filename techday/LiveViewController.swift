@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class LiveViewController: UIViewController {
     
@@ -72,6 +73,8 @@ class LiveViewController: UIViewController {
         if let vc = storyboard.instantiateViewController(identifier: Constants.fullscreenVC) as? FullScreenViewController {
             self.fullscreenViewController = vc
             self.fullscreenViewController?.videoURL = self.getCurrentVideo(match: viewModel.selectedMatch)
+            self.fullscreenViewController?.currentTime = self.playerViewController?.getCurrentTime()
+            self.fullscreenViewController?.delegate = self
             
             navigationController?.pushViewController(vc, animated: true)
         }
@@ -86,7 +89,7 @@ class LiveViewController: UIViewController {
     }
 }
 
-// MARK: DELEGATE
+// MARK: MATCHES DELEGATE
 extension LiveViewController: MatchesDelegates {
     
     func matchesDidChange() {
@@ -100,5 +103,12 @@ extension LiveViewController: MatchesDelegates {
         
         self.playerViewController?.videoURL = getCurrentVideo(match: match)
         self.matchesViewController?.selectedMatch = match
+    }
+}
+
+extension LiveViewController: FullscreenDelegate {
+    
+    func backToLiveVC(with time: CMTime?) {
+        self.playerViewController?.currentTime = time
     }
 }

@@ -177,7 +177,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullscreen-icon" translatesAutoresizingMaskIntoConstraints="NO" id="gBh-tA-Tt7">
-                                <rect key="frame" x="375" y="856" width="24" height="24"/>
+                                <rect key="frame" x="375" y="838" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="NBa-wW-xNd"/>
                                     <constraint firstAttribute="height" constant="24" id="xmN-5y-Amq"/>
@@ -187,14 +187,14 @@
                         <viewLayoutGuide key="safeArea" id="ALf-2e-38b"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4an-ea-t5o" firstAttribute="bottom" secondItem="gBh-tA-Tt7" secondAttribute="top" constant="40" id="7KX-fd-PlJ"/>
+                            <constraint firstItem="ALf-2e-38b" firstAttribute="trailing" secondItem="gBh-tA-Tt7" secondAttribute="trailing" constant="15" id="AEN-R3-dpU"/>
                             <constraint firstItem="4an-ea-t5o" firstAttribute="leading" secondItem="ALf-2e-38b" secondAttribute="leading" id="L1c-4x-4NO"/>
                             <constraint firstItem="ALf-2e-38b" firstAttribute="bottom" secondItem="DC1-gH-LAR" secondAttribute="bottom" id="PZY-A5-4CE"/>
-                            <constraint firstItem="gBh-tA-Tt7" firstAttribute="trailing" secondItem="4an-ea-t5o" secondAttribute="trailing" constant="-15" id="SYt-IA-ZRl"/>
                             <constraint firstItem="DC1-gH-LAR" firstAttribute="leading" secondItem="ALf-2e-38b" secondAttribute="leading" constant="15" id="UoS-C4-umm"/>
                             <constraint firstItem="ALf-2e-38b" firstAttribute="trailing" secondItem="4an-ea-t5o" secondAttribute="trailing" id="ZaN-vD-jiB"/>
                             <constraint firstItem="4an-ea-t5o" firstAttribute="top" secondItem="eih-FL-Z0N" secondAttribute="top" id="aic-6t-6MH"/>
                             <constraint firstAttribute="bottom" secondItem="4an-ea-t5o" secondAttribute="bottom" id="cLd-Kb-Vnm"/>
+                            <constraint firstItem="gBh-tA-Tt7" firstAttribute="centerY" secondItem="DC1-gH-LAR" secondAttribute="centerY" id="h5m-mk-Fjm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pvz-IL-qHF"/>
@@ -226,7 +226,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N3b-Ky-ugx"/>
+        <segue reference="eOB-Nu-nfb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="fullscreen-icon" width="512" height="512"/>
