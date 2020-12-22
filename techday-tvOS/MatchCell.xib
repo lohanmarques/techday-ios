@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="17506" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="TVUIKit controls" minToolsVersion="10.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -74,8 +74,8 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moj-Ro-fPF">
-                                            <rect key="frame" x="296" y="115" width="18" height="46"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moj-Ro-fPF">
+                                            <rect key="frame" x="289" y="115" width="25" height="46"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -115,6 +115,16 @@
                 <constraint firstItem="Vfb-eq-Str" firstAttribute="leading" secondItem="Rz2-K0-ksD" secondAttribute="leading" id="dNw-pw-hDg"/>
             </constraints>
             <size key="customSize" width="457" height="187"/>
+            <connections>
+                <outlet property="awayLogo" destination="IbU-fW-aqZ" id="WnM-1e-4Z6"/>
+                <outlet property="awayScore" destination="Moj-Ro-fPF" id="kAs-P7-HhQ"/>
+                <outlet property="awayTeam" destination="94x-Tp-cgg" id="9rh-ya-MjN"/>
+                <outlet property="homeLogo" destination="zVe-Ee-5gm" id="IUO-bs-KlU"/>
+                <outlet property="homeScore" destination="MgT-Gc-wt7" id="IY8-aS-XLb"/>
+                <outlet property="homeTeam" destination="xfx-4x-abt" id="49M-jn-riA"/>
+                <outlet property="mainView" destination="abN-Uf-iX7" id="pHS-fl-2ez"/>
+                <outlet property="tournament" destination="KkY-t2-NgI" id="RGe-E6-1Ve"/>
+            </connections>
             <point key="canvasLocation" x="171" y="72"/>
         </collectionViewCell>
     </objects>
