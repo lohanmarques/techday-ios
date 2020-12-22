@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TVUIKit
 
 final class MatchCell: UICollectionViewCell {
     func configure(_ match: Match) {

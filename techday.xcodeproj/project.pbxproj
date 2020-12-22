@@ -94,6 +94,7 @@
 		E2977DF325918785001C8E16 /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DF225918785001C8E16 /* FullscreenViewController.swift */; };
 		EB6A9F2025922453006A940B /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A9F1E25922453006A940B /* MatchCell.swift */; };
 		EB6A9F2125922453006A940B /* MatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6A9F1F25922453006A940B /* MatchCell.xib */; };
+		EB6A9F2A25923579006A940B /* TVUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6A9F2925923579006A940B /* TVUIKit.framework */; };
 		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		EBBE2FD225912EA6005290DB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FD125912EA6005290DB /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -153,6 +154,7 @@
 		E2977DF225918785001C8E16 /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
 		EB6A9F1E25922453006A940B /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		EB6A9F1F25922453006A940B /* MatchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCell.xib; sourceTree = "<group>"; };
+		EB6A9F2925923579006A940B /* TVUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVUIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS14.3.sdk/System/Library/Frameworks/TVUIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EBBE2FBD25910FFC005290DB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EBBE2FD125912EA6005290DB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB6A9F2A25923579006A940B /* TVUIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +185,7 @@
 				E23243F52590EFCA0041C4FC /* techday-tvOS */,
 				EBBE2FB725910679005290DB /* shared */,
 				E23243C32590E49F0041C4FC /* Products */,
+				EB6A9F2825923579006A940B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,11 +271,11 @@
 				E23243F62590EFCA0041C4FC /* AppDelegate.swift */,
 				E23243F82590EFCA0041C4FC /* LiveViewController.swift */,
 				EB6A9F1E25922453006A940B /* MatchCell.swift */,
+				EB6A9F1F25922453006A940B /* MatchCell.xib */,
 				E23243FA2590EFCA0041C4FC /* Main.storyboard */,
 				E23243FD2590EFCB0041C4FC /* Assets.xcassets */,
 				E23243FF2590EFCB0041C4FC /* LaunchScreen.storyboard */,
 				E23244022590EFCB0041C4FC /* Info.plist */,
-				EB6A9F1F25922453006A940B /* MatchCell.xib */,
 			);
 			path = "techday-tvOS";
 			sourceTree = "<group>";
@@ -310,6 +314,14 @@
 				E2977DCC25916323001C8E16 /* GradientView.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		EB6A9F2825923579006A940B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB6A9F2925923579006A940B /* TVUIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EBBE2FB725910679005290DB /* shared */ = {
