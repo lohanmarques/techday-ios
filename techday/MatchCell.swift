@@ -7,6 +7,8 @@
 
 import UIKit
 
+let imageCache = NSCache<NSString, UIImage>()
+
 final class MatchCell: UICollectionViewCell {
     
     let gradient: [UIColor] = [
@@ -50,10 +52,20 @@ final class MatchCell: UICollectionViewCell {
     }
     
     private func setImage(for name: String) -> UIImage? {
+        if let image = imageCache.object(forKey: name as NSString) {
+            return image
+        }
+
         guard let path = Bundle.main.path(forResource: "logo-\(name)", ofType: "png") else {
             return nil
         }
         
-        return UIImage(contentsOfFile: path)
+        guard let image = UIImage(contentsOfFile: path) else {
+            return nil
+        }
+
+        imageCache.setObject(image, forKey: name as NSString)
+
+        return image
     }
 }
