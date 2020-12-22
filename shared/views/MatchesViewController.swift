@@ -9,7 +9,7 @@ import UIKit
 
 class MatchesViewController: UICollectionViewController {
     private let reuseIdentifier: String = String(describing: MatchCell.self)
-    
+
     var matches: [Match]? {
         didSet {
             reloadData()
@@ -22,7 +22,11 @@ class MatchesViewController: UICollectionViewController {
         }
     }
     
-    lazy var viewModel: ViewModel? = nil
+    weak var viewModel: ViewModel?
+
+    #if os(tvOS)
+    var currentFocusIndexPath: IndexPath?
+    #endif
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,9 +66,26 @@ extension MatchesViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let match = matches?[indexPath.row] else { return }
-        
+
+        #if os(iOS)
+        viewModel?.selectMatch(match)
+        #endif
+    }
+
+    #if os(tvOS)
+    override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
+        currentFocusIndexPath = indexPath
+        return true
+    }
+
+    override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        guard let indexPath = currentFocusIndexPath else { return }
+        guard let match = matches?[indexPath.row] else { return }
+
         viewModel?.selectMatch(match)
     }
+
+    #endif
 }
 
 // MARK: LAYOUT

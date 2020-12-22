@@ -7,9 +7,6 @@
 
 import UIKit
 import AVKit
-#if canImport(NotificationCenter)
-import NotificationCenter
-#endif
 
 class PlayerViewController: AVPlayerViewController {
     var videoURL: URL? {
@@ -37,11 +34,13 @@ class PlayerViewController: AVPlayerViewController {
     }
     
     private func loopVideo() {
-        #if canImport(NotificationCenter)
-            NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
-                self.player?.seek(to: .zero)
-                self.player?.play()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [weak self] _ in
+            guard let player = self?.player else {
+                return
             }
-        #endif
+
+            player.seek(to: .zero)
+            player.play()
+        }
     }
 }

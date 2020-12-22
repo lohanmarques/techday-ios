@@ -27,9 +27,31 @@ final class LiveViewController: UIViewController {
 
         case Constants.matchesVCSegue:
             self.matchesViewController = segue.destination as? MatchesViewController
+            self.matchesViewController?.viewModel = viewModel
 
         default:
             break
+        }
+    }
+
+    override func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
+        super.pressesBegan(presses, with: event)
+
+        guard let press = presses.first, [2040, 2226].contains(press.type.rawValue) else {
+            return
+        }
+
+        guard let matchesView = self.matchesViewController?.view else {
+            return
+        }
+
+        UIView.animate(withDuration: 0.5) {
+            if matchesView.alpha == 1 {
+                matchesView.alpha = 0.0
+            }
+            else {
+                matchesView.alpha = 1
+            }
         }
     }
 }
