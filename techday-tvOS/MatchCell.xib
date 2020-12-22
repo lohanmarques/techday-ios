@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="17506" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="TVUIKit controls" minToolsVersion="10.2"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -133,6 +133,16 @@
                 <constraint firstItem="Vfb-eq-Str" firstAttribute="leading" secondItem="Rz2-K0-ksD" secondAttribute="leading" id="dNw-pw-hDg"/>
             </constraints>
             <size key="customSize" width="457" height="187"/>
+            <connections>
+                <outlet property="awayLogo" destination="IbU-fW-aqZ" id="sn3-He-WYf"/>
+                <outlet property="awayScore" destination="Moj-Ro-fPF" id="JUP-YB-pzq"/>
+                <outlet property="awayTeam" destination="94x-Tp-cgg" id="2bs-pg-iNd"/>
+                <outlet property="homeLogo" destination="zVe-Ee-5gm" id="lap-qw-tO2"/>
+                <outlet property="homeScore" destination="MgT-Gc-wt7" id="RLF-PE-41k"/>
+                <outlet property="homeTeam" destination="xfx-4x-abt" id="TqW-Lo-xM6"/>
+                <outlet property="mainView" destination="abN-Uf-iX7" id="fRL-0D-pee"/>
+                <outlet property="tournament" destination="KkY-t2-NgI" id="8i0-pD-uYI"/>
+            </connections>
             <point key="canvasLocation" x="171" y="72"/>
         </collectionViewCell>
     </objects>
