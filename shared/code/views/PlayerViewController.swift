@@ -31,6 +31,10 @@ class PlayerViewController: AVPlayerViewController {
     
     private func setUI() {
         videoGravity = .resizeAspectFill
+
+        #if os(tvOS)
+        showsPlaybackControls = false
+        #endif
     }
     
     private func loopVideo() {
