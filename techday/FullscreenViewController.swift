@@ -8,38 +8,43 @@
 import UIKit
 import AVKit
 
-final class FullScreenViewController: AVPlayerViewController {
+final class FullScreenViewController: UIViewController {
     
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return [.landscape] }
+    @IBOutlet weak var fullscreenImage: UIImageView!
     
-    var videoURL: URL? {
-        didSet {
-            guard let videoURL = self.videoURL else {
-                return
-            }
-
-            DispatchQueue.main.async {
-                self.player = AVPlayer(url: videoURL)
-                self.player?.play()
-            }
-        }
+    var videoURL: URL?
+    let tapFullscreen: UITapGestureRecognizer = UITapGestureRecognizer()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Orientation.lockOrientation(.landscape, andRotateTo: .landscapeLeft)
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setUI()
-        loopVideo()
+        
+        setFullscreenAction()
     }
     
-    private func setUI() {
-        videoGravity = .resizeAspectFill
-    }
-    
-    private func loopVideo() {
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
-            self.player?.seek(to: .zero)
-            self.player?.play()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let playerVC = segue.destination as? PlayerViewController {
+            playerVC.videoURL = videoURL
         }
+    }
+    
+    private func setFullscreenAction() {
+        tapFullscreen.addTarget(self, action: #selector(leaveFullscreen))
+        
+        fullscreenImage.addGestureRecognizer(tapFullscreen)
+        fullscreenImage.isUserInteractionEnabled = true
+    }
+    
+    @objc func leaveFullscreen() {
+        navigationController?.popViewController(animated: true)
     }
 }
