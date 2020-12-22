@@ -16,14 +16,21 @@ final class FullScreenViewController: UIViewController {
     
     @IBOutlet weak var fullscreenImage: UIImageView!
     @IBOutlet weak var pauseAndPlayImage: UIImageView!
+    @IBOutlet weak var infoImage: UIImageView!
+    @IBOutlet weak var infoView: BorderView!
+    @IBOutlet weak var infoTitleLabel: UILabel!
+    @IBOutlet weak var infoContentLabel: UILabel!
     
     weak var playerViewController: PlayerViewController!
     weak var delegate: FullscreenDelegate?
     
     var videoURL: URL?
     var currentTime: CMTime?
+    var selectedMatch: Match?
     let tapFullscreen: UITapGestureRecognizer = UITapGestureRecognizer()
     let tapPauseAndPlay: UITapGestureRecognizer = UITapGestureRecognizer()
+    let tapInfo: UITapGestureRecognizer = UITapGestureRecognizer()
+    var isShowingInfo: Bool = false
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,6 +53,8 @@ final class FullScreenViewController: UIViewController {
         
         setFullscreenAction()
         setPauseAndPlayAction()
+        setInfoAction()
+        setInfoView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,9 +79,69 @@ final class FullScreenViewController: UIViewController {
         pauseAndPlayImage.isUserInteractionEnabled = true
     }
     
-    @objc func leaveFullscreen() {
+    private func setInfoAction() {
+        tapInfo.addTarget(self, action: #selector(displayInfo))
+        
+        infoImage.addGestureRecognizer(tapInfo)
+        infoImage.isUserInteractionEnabled = true
+    }
+    
+    private func setInfoView() {
+        infoView.isHidden = true
+        infoView.alpha = 0
+        
+        let containsInfo = selectedMatch?.info != nil
+        infoImage.isHidden = !containsInfo
+        
+        if containsInfo {
+            infoTitleLabel.text = selectedMatch?.info?.title
+            infoContentLabel.text = selectedMatch?.info?.content
+        }
+    }
+    
+    private func setInfoState() {
+        infoImage.isHidden = selectedMatch?.info == nil
+    
+        if isShowingInfo {
+            infoImage.image = UIImage(named: "info-icon-enabled")
+            fadeIn()
+        } else {
+            infoImage.image = UIImage(named: "info-icon")
+            fadeOut()
+        }
+    }
+    
+    private func fadeIn() {
+        infoView.isHidden = false
+        
+        UIView.animate(withDuration: 0.5) {
+            self.infoView.alpha = 1
+        }
+    }
+    
+    private func fadeOut() {
+        UIView.animate(withDuration: 0.5) {
+            self.infoView.alpha = 0
+        } completion: { _ in
+            self.infoView.isHidden = true
+        }
+    }
+    
+    private func backToLive() {
         navigationController?.popViewController(animated: true)
-        self.delegate?.backToLiveVC(with: playerViewController.getCurrentTime())
+        delegate?.backToLiveVC(with: playerViewController.getCurrentTime())
+    }
+    
+    @objc func leaveFullscreen() {
+        if !infoView.isHidden {
+            infoView.isHidden = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.backToLive()
+            }
+        } else {
+            backToLive()
+        }
     }
     
     @objc func pauseAndPlayVideo() {
@@ -83,5 +152,10 @@ final class FullScreenViewController: UIViewController {
             playerViewController.play()
             pauseAndPlayImage.image = UIImage(named: "pause-icon")
         }
+    }
+    
+    @objc func displayInfo() {
+        isShowingInfo = !isShowingInfo
+        setInfoState()
     }
 }

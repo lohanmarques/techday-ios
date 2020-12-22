@@ -16,4 +16,5 @@ struct Match: Decodable, Equatable {
     let away: String
     let score: String
     let tournament: String
+    let info: Info?
 }

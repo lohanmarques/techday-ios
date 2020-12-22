@@ -72,9 +72,10 @@ class LiveViewController: UIViewController {
         
         if let vc = storyboard.instantiateViewController(identifier: Constants.fullscreenVC) as? FullScreenViewController {
             self.fullscreenViewController = vc
+            self.fullscreenViewController?.delegate = self
             self.fullscreenViewController?.videoURL = self.getCurrentVideo(match: viewModel.selectedMatch)
             self.fullscreenViewController?.currentTime = self.playerViewController?.getCurrentTime()
-            self.fullscreenViewController?.delegate = self
+            self.fullscreenViewController?.selectedMatch = self.matchesViewController?.selectedMatch
             
             navigationController?.pushViewController(vc, animated: true)
         }

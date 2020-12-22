@@ -4,55 +4,76 @@
       "home": "cam",
       "away": "bot",
       "score": "2 x 1",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": {
+          "title": "Homenagens a Maradona",
+          "content": "No dia que marcou a morte de Diego Armando Maradona, um dos maiores jogadores de todos os tempos, a noite foi de homenagens no Mineirão. Além do minuto de silêncio, o Atlético trouxe a foto do craque no uniforme e deu a camisa 10 a Zaracho, o único argentino em campo"
+      }
     },
     {
       "home": "acg",
       "away": "int",
       "score": "0 x 0",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": null
     },
     {
       "home": "bah",
       "away": "sao",
       "score": "1 x 3",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": {
+          "title": "Bahia ainda corre risco",
+          "content": "Em meio à disputa nas oitavas de final da Copa Sul-Americana e bastante desfalcado, até mesmo do técnico Mano Menezes (com Covid-19), o Bahia não consegue se afastar de vez da luta contra o rebaixamento."
+      }
     },
     {
       "home": "cfc",
       "away": "cor",
       "score": "0 x 1",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": null
     },
     {
       "home": "flu",
       "away": "bgt",
       "score": "0 x 0",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": null
     },
     {
       "home": "for",
       "away": "goi",
       "score": "1 x 1",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": null
     },
     {
       "home": "pal",
       "away": "atl",
       "score": "3 x 0",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": {
+          "title": "Cadê o goleiro?",
+          "content": "O Athletico está jogando a partida sem goleiro reserva. A CBF não autorizou a liberação do garoto Mycael, de 16 anos, que está com a seleção sub-17."
+      }
     },
     {
       "home": "san",
       "away": "spt",
       "score": "1 x 1",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": {
+          "title": "VAR movimentado...",
+          "content": "O VAR apareceu como determinante para os dois primeiros gols do Peixe. Primeiro, sinalizou um pênalti após toque de mão de Adryelson na área e a cobrança foi convertida por Marinho."
+      }
     },
     {
       "home": "vas",
       "away": "cea",
       "score": "1 x 4",
-      "tournament": "Campeonato Brasileiro"
+      "tournament": "Campeonato Brasileiro",
+      "info": null
     }
   ]
 }
