@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17701" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="17506" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="appleTV" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,14 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndr-kE-fiI">
-                                <rect key="frame" x="80" y="60" width="1760" height="960"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <connections>
                                     <segue destination="MKH-XK-wVL" kind="embed" identifier="EmbedPlayerViewController" id="LHO-XL-9uU"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3p-og-n87">
-                                <rect key="frame" x="96" y="814" width="1728" height="183"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3p-og-n87">
+                                <rect key="frame" x="80" y="702" width="1760" height="378"/>
                                 <connections>
                                     <segue destination="Q3S-wl-3qC" kind="embed" identifier="EmbedMatchesViewController" id="1bQ-rH-u0x"/>
                                 </connections>
@@ -36,10 +35,14 @@
                         <viewLayoutGuide key="safeArea" id="wu6-TO-1qx"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ndr-kE-fiI" firstAttribute="top" secondItem="wu6-TO-1qx" secondAttribute="top" id="Dad-XL-jH9"/>
-                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="ndr-kE-fiI" secondAttribute="trailing" id="KZU-tS-f23"/>
-                            <constraint firstItem="ndr-kE-fiI" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="MmX-t4-Cx3"/>
-                            <constraint firstItem="wu6-TO-1qx" firstAttribute="bottom" secondItem="ndr-kE-fiI" secondAttribute="bottom" id="uod-fe-aab"/>
+                            <constraint firstItem="ndr-kE-fiI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dad-XL-jH9"/>
+                            <constraint firstAttribute="trailing" secondItem="ndr-kE-fiI" secondAttribute="trailing" id="KZU-tS-f23"/>
+                            <constraint firstItem="ndr-kE-fiI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MmX-t4-Cx3"/>
+                            <constraint firstItem="R3p-og-n87" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.35" id="TEE-pc-UEb"/>
+                            <constraint firstItem="wu6-TO-1qx" firstAttribute="trailing" secondItem="R3p-og-n87" secondAttribute="trailing" id="WdT-6H-oPl"/>
+                            <constraint firstItem="R3p-og-n87" firstAttribute="leading" secondItem="wu6-TO-1qx" secondAttribute="leading" id="gAr-xM-KhV"/>
+                            <constraint firstAttribute="bottom" secondItem="R3p-og-n87" secondAttribute="bottom" id="jNN-PU-pAE"/>
+                            <constraint firstAttribute="bottom" secondItem="ndr-kE-fiI" secondAttribute="bottom" id="uod-fe-aab"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -60,7 +63,7 @@
             <objects>
                 <collectionViewController id="Q3S-wl-3qC" customClass="MatchesViewController" customModule="techday_tvOS" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Zme-fe-XaH">
-                        <rect key="frame" x="0.0" y="0.0" width="1728" height="183"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1760" height="378"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="16" id="P0y-Id-ZBo">
                             <size key="itemSize" width="380" height="183"/>

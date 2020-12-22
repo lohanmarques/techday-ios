@@ -90,9 +90,13 @@ extension MatchesViewController {
 
 // MARK: LAYOUT
 extension MatchesViewController: UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        #if os(tvOS)
+        return CGSize(width: 380, height: 530)
+        #elseif os(iOS)
         return CGSize(width: 150, height: 180)
+        #endif
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
