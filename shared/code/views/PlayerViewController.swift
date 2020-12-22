@@ -28,7 +28,7 @@ class PlayerViewController: AVPlayerViewController {
         setUI()
         loopVideo()
     }
-    
+
     private func setUI() {
         videoGravity = .resizeAspectFill
 

@@ -25,18 +25,13 @@ class MatchesViewController: UICollectionViewController {
     weak var viewModel: ViewModel?
 
     #if os(tvOS)
-    var currentFocusIndexPath: IndexPath?
+    var currentFocusedIndexPath: IndexPath?
     #endif
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
     }
 
     private func reloadData() {
@@ -79,16 +74,15 @@ extension MatchesViewController {
 
     #if os(tvOS)
     override func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        currentFocusIndexPath = context.nextFocusedIndexPath
+        currentFocusedIndexPath = context.nextFocusedIndexPath
     }
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        guard let indexPath = currentFocusIndexPath else { return }
+        guard let indexPath = currentFocusedIndexPath else { return }
         guard let match = matches?[indexPath.row] else { return }
 
         viewModel?.selectMatch(match)
     }
-
     #endif
 }
 
