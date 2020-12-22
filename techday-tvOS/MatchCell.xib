@@ -23,7 +23,7 @@
                             <rect key="frame" x="23" y="23" width="334" height="184"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abN-Uf-iX7">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abN-Uf-iX7" customClass="BorderView" customModule="techday_tvOS" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="334" height="184"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMPEONATO CARIOCA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KkY-t2-NgI">
@@ -94,9 +94,14 @@
                                         <constraint firstItem="Moj-Ro-fPF" firstAttribute="centerY" secondItem="94x-Tp-cgg" secondAttribute="centerY" id="t2D-FS-MGb"/>
                                         <constraint firstItem="KkY-t2-NgI" firstAttribute="leading" secondItem="abN-Uf-iX7" secondAttribute="leading" constant="20" id="w14-Mg-KhL"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="0.1803921568627451" green="0.56470588235294117" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="abN-Uf-iX7" secondAttribute="bottom" id="bdp-5I-27v"/>
                                 <constraint firstItem="abN-Uf-iX7" firstAttribute="top" secondItem="gpO-xH-m3a" secondAttribute="top" id="oPm-6X-xL5"/>
