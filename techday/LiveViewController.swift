@@ -24,7 +24,16 @@ class LiveViewController: UIViewController {
     let tapFullscreen: UIGestureRecognizer = UITapGestureRecognizer()
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         Orientation.lockOrientation(.portrait, andRotateTo: .portrait)
+        playerViewController?.play()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        playerViewController?.pause()
     }
     
     override func viewDidLoad() {

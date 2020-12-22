@@ -12,8 +12,8 @@ let imageCache = NSCache<NSString, UIImage>()
 final class MatchCell: UICollectionViewCell {
 
     let gradient: [UIColor] = [
-        UIColor(red: 0, green: 0, blue: 0, alpha: 0.00),
-        UIColor(red: 0.18, green: 0.56, blue: 0.24, alpha: 1.00)
+        Constants.Colors.backgroundColor,
+        Constants.Colors.primaryColor
     ]
 
     @IBOutlet weak var mainView: UIView!
@@ -36,15 +36,23 @@ final class MatchCell: UICollectionViewCell {
         homeLogo?.image = setImage(for: match.home)
         awayLogo?.image = setImage(for: match.away)
     }
-
+    
     func setupUI() {
-        mainView?.addGradient(with: gradient,
-                             startPoint: CGPoint(x: 1.0, y: 0.0),
-                             endPoint: CGPoint(x: 1.0, y: 1.0))
+        addGradient()
     }
 
     func setEnabled(_ enabled: Bool) {
-        mainView?.layer.borderColor = enabled ? Constants.Colors.border.cgColor : UIColor.clear.cgColor
+        if enabled {
+            mainView.removeGradient()
+        } else {
+            addGradient()
+        }
+    }
+        
+    private func addGradient() {
+        mainView.addGradient(with: gradient,
+                             startPoint: CGPoint(x: 1.0, y: 0.0),
+                             endPoint: CGPoint(x: 1.0, y: 1.0))
     }
 
     private func getGoals(_ score: String) -> [String]  {

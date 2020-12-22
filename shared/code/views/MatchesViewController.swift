@@ -57,7 +57,11 @@ extension MatchesViewController {
     
         if let match = self.matches?[indexPath.item], let cell = cell as? MatchCell {
             cell.configure(match)
+            cell.setupUI()
+            
+            #if os(iOS)
             cell.setEnabled(match == viewModel?.selectedMatch)
+            #endif
         }
     
         return cell

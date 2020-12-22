@@ -25,6 +25,12 @@ final class FullScreenViewController: UIViewController {
         Orientation.lockOrientation(.landscape, andRotateTo: .landscapeLeft)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        playerViewController.pause()
+    }
+    
     override var shouldAutorotate: Bool {
         return true
     }
