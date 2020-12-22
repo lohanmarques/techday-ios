@@ -154,7 +154,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XEg-PT-C4O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="346"/>
+            <point key="canvasLocation" x="1174" y="494"/>
         </scene>
         <!--Full Screen View Controller-->
         <scene sceneID="jpP-pH-e2W">

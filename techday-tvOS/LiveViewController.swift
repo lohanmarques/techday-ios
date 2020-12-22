@@ -17,7 +17,6 @@ final class LiveViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
-        matchesViewController?.delegate = self
         viewModel.fetchMatches()
     }
 
