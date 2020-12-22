@@ -92,6 +92,8 @@
 		E2977DDD2591663A001C8E16 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DDC2591663A001C8E16 /* BorderView.swift */; };
 		E2977DDE2591663A001C8E16 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DDC2591663A001C8E16 /* BorderView.swift */; };
 		E2977DF325918785001C8E16 /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DF225918785001C8E16 /* FullscreenViewController.swift */; };
+		EB6A9F2025922453006A940B /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6A9F1E25922453006A940B /* MatchCell.swift */; };
+		EB6A9F2125922453006A940B /* MatchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6A9F1F25922453006A940B /* MatchCell.xib */; };
 		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		EBBE2FD225912EA6005290DB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FD125912EA6005290DB /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -149,6 +151,8 @@
 		E2977DD3259163B5001C8E16 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E2977DDC2591663A001C8E16 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		E2977DF225918785001C8E16 /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
+		EB6A9F1E25922453006A940B /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
+		EB6A9F1F25922453006A940B /* MatchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCell.xib; sourceTree = "<group>"; };
 		EBBE2FBD25910FFC005290DB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EBBE2FD125912EA6005290DB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,10 +266,12 @@
 			children = (
 				E23243F62590EFCA0041C4FC /* AppDelegate.swift */,
 				E23243F82590EFCA0041C4FC /* LiveViewController.swift */,
+				EB6A9F1E25922453006A940B /* MatchCell.swift */,
 				E23243FA2590EFCA0041C4FC /* Main.storyboard */,
 				E23243FD2590EFCB0041C4FC /* Assets.xcassets */,
 				E23243FF2590EFCB0041C4FC /* LaunchScreen.storyboard */,
 				E23244022590EFCB0041C4FC /* Info.plist */,
+				EB6A9F1F25922453006A940B /* MatchCell.xib */,
 			);
 			path = "techday-tvOS";
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 				E23244302590EFFF0041C4FC /* logo-spt.png in Resources */,
 				E232442A2590EFFF0041C4FC /* logo-atl.png in Resources */,
 				E232443C2590EFFF0041C4FC /* logo-cfc.png in Resources */,
+				EB6A9F2125922453006A940B /* MatchCell.xib in Resources */,
 				E23244322590EFFF0041C4FC /* logo-bot.png in Resources */,
 				E232443A2590EFFF0041C4FC /* logo-goi.png in Resources */,
 				E23244382590EFFF0041C4FC /* logo-for.png in Resources */,
@@ -516,6 +523,7 @@
 				E2977DD5259163B5001C8E16 /* UIView.swift in Sources */,
 				8F58211C259128C000E190B4 /* MatchesViewController.swift in Sources */,
 				8F582113259127AC00E190B4 /* ViewModel.swift in Sources */,
+				EB6A9F2025922453006A940B /* MatchCell.swift in Sources */,
 				EBBE2FD225912EA6005290DB /* PlayerViewController.swift in Sources */,
 				E23243F92590EFCA0041C4FC /* LiveViewController.swift in Sources */,
 				E23243F72590EFCA0041C4FC /* AppDelegate.swift in Sources */,
