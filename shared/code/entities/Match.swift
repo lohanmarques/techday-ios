@@ -11,7 +11,7 @@ struct Matches: Decodable {
     let matches: [Match]
 }
 
-struct Match: Decodable {
+struct Match: Decodable, Equatable {
     let home: String
     let away: String
     let score: String

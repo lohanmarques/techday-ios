@@ -286,13 +286,21 @@
 		E2977D6E25913C31001C8E16 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				E2977DD3259163B5001C8E16 /* UIView.swift */,
-				E2977DDC2591663A001C8E16 /* BorderView.swift */,
-				E2977DCC25916323001C8E16 /* GradientView.swift */,
+				E2977DE7259174F0001C8E16 /* extensions */,
 				EBBE2FD125912EA6005290DB /* PlayerViewController.swift */,
 				8F58211B259128C000E190B4 /* MatchesViewController.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		E2977DE7259174F0001C8E16 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2977DD3259163B5001C8E16 /* UIView.swift */,
+				E2977DDC2591663A001C8E16 /* BorderView.swift */,
+				E2977DCC25916323001C8E16 /* GradientView.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		EBBE2FB725910679005290DB /* shared */ = {

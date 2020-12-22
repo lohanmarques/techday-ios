@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import NotificationCenter
 
 class PlayerViewController: AVPlayerViewController {
     var videoURL: URL? {
@@ -25,6 +26,14 @@ class PlayerViewController: AVPlayerViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.videoGravity = .resizeAspectFill
+        videoGravity = .resizeAspectFill
+        loopVideo()
+    }
+    
+    private func loopVideo() {
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
+            self.player?.seek(to: .zero)
+            self.player?.play()
+        }
     }
 }

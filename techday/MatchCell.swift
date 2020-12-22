@@ -36,7 +36,13 @@ final class MatchCell: UICollectionViewCell {
     }
     
     func setupUI() {
-        mainView.addGradient(with: gradient, startPoint: CGPoint(x: 1.0, y: 0.0), endPoint: CGPoint(x: 1.0, y: 1.0))
+        mainView.addGradient(with: gradient,
+                             startPoint: CGPoint(x: 1.0, y: 0.0),
+                             endPoint: CGPoint(x: 1.0, y: 1.0))
+    }
+    
+    func setEnabled(_ enabled: Bool) {
+        mainView.layer.borderColor = enabled ? Constants.Colors.border.cgColor : UIColor.clear.cgColor
     }
     
     private func getGoals(_ score: String) -> [String]  {

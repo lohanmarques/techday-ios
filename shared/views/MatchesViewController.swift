@@ -12,21 +12,33 @@ class MatchesViewController: UICollectionViewController {
     
     var matches: [Match]? {
         didSet {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            reloadData()
         }
     }
+    
+    var selectedMatch: Match? {
+        didSet {
+            reloadData()
+        }
+    }
+    
+    lazy var viewModel: ViewModel? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.collectionView?.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
+    
+    private func reloadData() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 // MARK: DATASOURCE
-extension MatchesViewController: UICollectionViewDelegateFlowLayout {
+extension MatchesViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -42,11 +54,22 @@ extension MatchesViewController: UICollectionViewDelegateFlowLayout {
         if let match = self.matches?[indexPath.item], let cell = cell as? MatchCell {
             cell.configure(match)
             cell.setupUI()
+            cell.setEnabled(match == viewModel?.selectedMatch)
         }
     
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let match = matches?[indexPath.row] else { return }
+        
+        viewModel?.selectMatch(match)
+    }
+}
+
+// MARK: LAYOUT
+extension MatchesViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 150, height: 180)
     }

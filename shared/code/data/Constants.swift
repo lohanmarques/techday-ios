@@ -5,10 +5,14 @@
 //  Created by Lohan Marques on 21/12/20.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
     
     static let playerVCSegue: String = "EmbedPlayerViewController"
     static let matchesVCSegue: String = "EmbedMatchesViewController"
+    
+    struct Colors {
+        static let border: UIColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+    }
 }

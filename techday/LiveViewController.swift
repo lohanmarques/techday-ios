@@ -14,6 +14,7 @@ class LiveViewController: UIViewController {
     
     weak var playerViewController: PlayerViewController?
     weak var matchesViewController: MatchesViewController?
+    weak var delegate: MatchesDelegates?
     
     lazy var viewModel: ViewModel = ViewModel()
     
@@ -31,6 +32,7 @@ class LiveViewController: UIViewController {
 
         case Constants.matchesVCSegue:
             self.matchesViewController = segue.destination as? MatchesViewController
+            self.matchesViewController?.viewModel = viewModel
 
         default:
             break
@@ -55,5 +57,6 @@ extension LiveViewController: MatchesDelegates {
         }
 
         self.playerViewController?.videoURL = videoURL
+        self.matchesViewController?.selectedMatch = match
     }
 }
