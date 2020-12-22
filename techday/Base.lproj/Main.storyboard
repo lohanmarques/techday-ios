@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,9 +25,16 @@
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Agx-lN-WcD">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="403"/>
                                                 <connections>
-                                                    <segue destination="sea-cn-qIP" kind="embed" identifier="EmbedPlayerViewController" id="vRV-7c-3RY"/>
+                                                    <segue destination="sea-cn-qIP" kind="embed" identifier="EmbedPlayerViewController" id="N3b-Ky-ugx"/>
                                                 </connections>
                                             </containerView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullscreen-icon" translatesAutoresizingMaskIntoConstraints="NO" id="JhS-bi-876">
+                                                <rect key="frame" x="375" y="363" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="24" id="hKC-lN-ybO"/>
+                                                    <constraint firstAttribute="width" constant="24" id="qu1-Qc-rOK"/>
+                                                </constraints>
+                                            </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wcf-bv-vQd">
                                                 <rect key="frame" x="20" y="418" width="394" height="20"/>
                                                 <subviews>
@@ -73,9 +81,11 @@
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="height" secondItem="cNn-7R-Fy7" secondAttribute="height" multiplier="0.45" id="BCY-EK-P7h"/>
                                             <constraint firstAttribute="trailing" secondItem="Agx-lN-WcD" secondAttribute="trailing" id="DYd-9T-cfc"/>
                                             <constraint firstItem="Wcf-bv-vQd" firstAttribute="leading" secondItem="Agx-lN-WcD" secondAttribute="leading" constant="20" id="QId-6Q-GlO"/>
+                                            <constraint firstItem="JhS-bi-876" firstAttribute="trailing" secondItem="Agx-lN-WcD" secondAttribute="trailing" constant="-15" id="eVv-pC-vDo"/>
                                             <constraint firstItem="tVq-gW-UBP" firstAttribute="height" secondItem="cNn-7R-Fy7" secondAttribute="height" multiplier="0.25" id="fCr-Rw-fYA"/>
                                             <constraint firstItem="Wcf-bv-vQd" firstAttribute="trailing" secondItem="Agx-lN-WcD" secondAttribute="trailing" id="h9K-Hw-j2o"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="top" secondItem="cNn-7R-Fy7" secondAttribute="top" id="iM4-fX-Unt"/>
+                                            <constraint firstItem="JhS-bi-876" firstAttribute="top" secondItem="Agx-lN-WcD" secondAttribute="bottom" constant="-40" id="kDr-bz-TPM"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="width" secondItem="cNn-7R-Fy7" secondAttribute="width" id="mk1-QQ-efL"/>
                                             <constraint firstItem="Agx-lN-WcD" firstAttribute="leading" secondItem="cNn-7R-Fy7" secondAttribute="leading" id="qFN-em-m5k"/>
                                             <constraint firstItem="tVq-gW-UBP" firstAttribute="top" secondItem="Wcf-bv-vQd" secondAttribute="bottom" id="qk7-Aa-9ZL"/>
@@ -104,6 +114,10 @@
                             <constraint firstItem="8Hh-eF-shj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="o2U-A2-cBh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fullscreenImage" destination="JhS-bi-876" id="8zZ-5f-kd7"/>
+                        <segue destination="wfh-bB-BVx" kind="show" identifier="ShowFullscreenVCSegue" id="HD9-FM-QsM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +129,7 @@
                 <avPlayerViewController showsPlaybackControls="NO" videoGravity="AVLayerVideoGravityResizeAspect" id="sea-cn-qIP" customClass="PlayerViewController" customModule="techday" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxj-8b-9rI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1177" y="74"/>
+            <point key="canvasLocation" x="1172" y="-14"/>
         </scene>
         <!--Matches View Controller-->
         <scene sceneID="kEz-6D-pqQ">
@@ -142,8 +156,45 @@
             </objects>
             <point key="canvasLocation" x="1177" y="346"/>
         </scene>
+        <!--Full Screen View Controller-->
+        <scene sceneID="jpP-pH-e2W">
+            <objects>
+                <viewController id="wfh-bB-BVx" customClass="FullScreenViewController" customModule="techday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eih-FL-Z0N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4an-ea-t5o">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <connections>
+                                    <segue destination="sea-cn-qIP" kind="embed" identifier="EmbedPlayerViewController" id="eOB-Nu-nfb"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ALf-2e-38b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4an-ea-t5o" firstAttribute="leading" secondItem="ALf-2e-38b" secondAttribute="leading" id="L1c-4x-4NO"/>
+                            <constraint firstItem="ALf-2e-38b" firstAttribute="trailing" secondItem="4an-ea-t5o" secondAttribute="trailing" id="ZaN-vD-jiB"/>
+                            <constraint firstItem="4an-ea-t5o" firstAttribute="top" secondItem="eih-FL-Z0N" secondAttribute="top" id="aic-6t-6MH"/>
+                            <constraint firstAttribute="bottom" secondItem="4an-ea-t5o" secondAttribute="bottom" id="cLd-Kb-Vnm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pvz-IL-qHF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otX-o7-Pf8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1175" y="-686"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="eOB-Nu-nfb"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="fullscreen-icon" width="512" height="512"/>
         <image name="live-icon" width="20.5" height="14.5"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

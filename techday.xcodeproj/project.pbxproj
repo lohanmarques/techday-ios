@@ -91,6 +91,7 @@
 		E2977DD5259163B5001C8E16 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DD3259163B5001C8E16 /* UIView.swift */; };
 		E2977DDD2591663A001C8E16 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DDC2591663A001C8E16 /* BorderView.swift */; };
 		E2977DDE2591663A001C8E16 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DDC2591663A001C8E16 /* BorderView.swift */; };
+		E2977DF325918785001C8E16 /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977DF225918785001C8E16 /* FullscreenViewController.swift */; };
 		EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		EBBE2FD225912EA6005290DB /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FD125912EA6005290DB /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -147,6 +148,7 @@
 		E2977DCC25916323001C8E16 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		E2977DD3259163B5001C8E16 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		E2977DDC2591663A001C8E16 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		E2977DF225918785001C8E16 /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
 		EBBE2FBD25910FFC005290DB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		EBBE2FD125912EA6005290DB /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 			children = (
 				E23243C52590E49F0041C4FC /* AppDelegate.swift */,
 				E23243C92590E49F0041C4FC /* LiveViewController.swift */,
+				E2977DF225918785001C8E16 /* FullscreenViewController.swift */,
 				E2977DAD25915366001C8E16 /* MatchCell.swift */,
 				E2977DAC25915366001C8E16 /* MatchCell.xib */,
 				E23243CB2590E49F0041C4FC /* Main.storyboard */,
@@ -499,6 +502,7 @@
 				E23243C62590E49F0041C4FC /* AppDelegate.swift in Sources */,
 				E2977D8225913D69001C8E16 /* MatchesViewController.swift in Sources */,
 				E2977D6F25913C40001C8E16 /* PlayerViewController.swift in Sources */,
+				E2977DF325918785001C8E16 /* FullscreenViewController.swift in Sources */,
 				EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */,
 				E2977D3B25911B37001C8E16 /* Match.swift in Sources */,
 				E2977D7A25913CC3001C8E16 /* Constants.swift in Sources */,

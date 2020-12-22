@@ -1,15 +1,17 @@
 //
-//  PlayerViewController.swift
-//  techday-tvOS
+//  FullscreenViewController.swift
+//  techday
 //
-//  Created by Vanderlei Martinelli on 21/12/20.
+//  Created by Lohan Marques on 21/12/20.
 //
 
 import UIKit
 import AVKit
-import NotificationCenter
 
-class PlayerViewController: AVPlayerViewController {
+final class FullScreenViewController: AVPlayerViewController {
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return [.landscape] }
+    
     var videoURL: URL? {
         didSet {
             guard let videoURL = self.videoURL else {
@@ -35,7 +37,6 @@ class PlayerViewController: AVPlayerViewController {
     }
     
     private func loopVideo() {
-        
         NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
             self.player?.seek(to: .zero)
             self.player?.play()

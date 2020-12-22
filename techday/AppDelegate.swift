@@ -13,13 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        start(for: storyboard)
+        
+        Thread.sleep(forTimeInterval: 2.0)
+        start()
         
         return true
     }
     
-    private func start(for storyboard: UIStoryboard) {
+    private func start() {
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
         guard let vc = storyboard.instantiateInitialViewController() else { return }
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
