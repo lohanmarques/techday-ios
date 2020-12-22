@@ -14,6 +14,6 @@ struct Constants {
     static let fullscreenVC: String = "FullscreenVC"
     
     struct Colors {
-        static let border: UIColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        static let selectedColor: UIColor = UIColor(red: 0.37, green: 0.42, blue: 0.36, alpha: 1.00)
     }
 }
