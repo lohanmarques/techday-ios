@@ -13,6 +13,10 @@ final class LiveViewController: UIViewController {
     weak var playerViewController: PlayerViewController?
     weak var matchesViewController: MatchesViewController?
 
+    override var preferredFocusEnvironments: [UIFocusEnvironment] {
+        return [(self.matchesViewController ?? self).view]
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

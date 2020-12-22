@@ -9,6 +9,8 @@ import UIKit
 
 class LiveViewController: UIViewController {
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return [.portrait]}
+    
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var matchesCollectionView: UICollectionView!
     @IBOutlet weak var fullscreenImage: UIImageView!
@@ -20,6 +22,10 @@ class LiveViewController: UIViewController {
     
     lazy var viewModel: ViewModel = ViewModel()
     let tapFullscreen: UIGestureRecognizer = UITapGestureRecognizer()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        Orientation.lockOrientation(.portrait, andRotateTo: .portrait)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,10 +44,6 @@ class LiveViewController: UIViewController {
         case Constants.matchesVCSegue:
             self.matchesViewController = segue.destination as? MatchesViewController
             self.matchesViewController?.viewModel = viewModel
-            
-        case Constants.showFullscreenVCSegue:
-            self.fullscreenViewController = segue.destination as? FullScreenViewController
-            self.fullscreenViewController?.videoURL = self.getCurrentVideo(match: viewModel.selectedMatch)
 
         default:
             break
@@ -56,7 +58,14 @@ class LiveViewController: UIViewController {
     }
     
     @objc func enterFullscreen() {
-        performSegue(withIdentifier: Constants.showFullscreenVCSegue, sender: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: .main)
+        
+        if let vc = storyboard.instantiateViewController(identifier: Constants.fullscreenVC) as? FullScreenViewController {
+            self.fullscreenViewController = vc
+            self.fullscreenViewController?.videoURL = self.getCurrentVideo(match: viewModel.selectedMatch)
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     private func getCurrentVideo(match: Match) -> URL? {

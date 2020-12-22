@@ -25,15 +25,15 @@ class MatchesViewController: UICollectionViewController {
     weak var viewModel: ViewModel?
 
     #if os(tvOS)
-    var currentFocusIndexPath: IndexPath?
+    var currentFocusedIndexPath: IndexPath?
     #endif
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.collectionView?.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+
+        self.collectionView.register(UINib(nibName: reuseIdentifier, bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
-    
+
     private func reloadData() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
@@ -57,7 +57,6 @@ extension MatchesViewController {
     
         if let match = self.matches?[indexPath.item], let cell = cell as? MatchCell {
             cell.configure(match)
-            cell.setupUI()
             cell.setEnabled(match == viewModel?.selectedMatch)
         }
     
@@ -73,18 +72,16 @@ extension MatchesViewController {
     }
 
     #if os(tvOS)
-    override func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
-        currentFocusIndexPath = indexPath
-        return true
+    override func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
+        currentFocusedIndexPath = context.nextFocusedIndexPath
     }
 
     override func didUpdateFocus(in context: UIFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        guard let indexPath = currentFocusIndexPath else { return }
+        guard let indexPath = currentFocusedIndexPath else { return }
         guard let match = matches?[indexPath.row] else { return }
 
         viewModel?.selectMatch(match)
     }
-
     #endif
 }
 

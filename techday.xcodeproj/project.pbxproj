@@ -10,6 +10,7 @@
 		8F582113259127AC00E190B4 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2977D3425911A30001C8E16 /* ViewModel.swift */; };
 		8F582116259127BB00E190B4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE2FBD25910FFC005290DB /* Repository.swift */; };
 		8F58211C259128C000E190B4 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F58211B259128C000E190B4 /* MatchesViewController.swift */; };
+		E22E4CC025922BB2009DB244 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22E4CBF25922BB2009DB244 /* Orientation.swift */; };
 		E23243C62590E49F0041C4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23243C52590E49F0041C4FC /* AppDelegate.swift */; };
 		E23243CA2590E49F0041C4FC /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23243C92590E49F0041C4FC /* LiveViewController.swift */; };
 		E23243CD2590E49F0041C4FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E23243CB2590E49F0041C4FC /* Main.storyboard */; };
@@ -101,6 +102,7 @@
 
 /* Begin PBXFileReference section */
 		8F58211B259128C000E190B4 /* MatchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesViewController.swift; sourceTree = "<group>"; };
+		E22E4CBF25922BB2009DB244 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		E23243C22590E49F0041C4FC /* techday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = techday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23243C52590E49F0041C4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E23243C92590E49F0041C4FC /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
@@ -203,6 +205,8 @@
 				E23243C52590E49F0041C4FC /* AppDelegate.swift */,
 				E23243C92590E49F0041C4FC /* LiveViewController.swift */,
 				E2977DF225918785001C8E16 /* FullscreenViewController.swift */,
+				E22E4CBF25922BB2009DB244 /* Orientation.swift */,
+				E2977DAD25915366001C8E16 /* MatchCell.swift */,
 				E2977DAC25915366001C8E16 /* MatchCell.xib */,
 				E23243CB2590E49F0041C4FC /* Main.storyboard */,
 				E23243CE2590E4A00041C4FC /* Assets.xcassets */,
@@ -520,6 +524,7 @@
 				E2977D8225913D69001C8E16 /* MatchesViewController.swift in Sources */,
 				E2977D6F25913C40001C8E16 /* PlayerViewController.swift in Sources */,
 				E2977DF325918785001C8E16 /* FullscreenViewController.swift in Sources */,
+				E22E4CC025922BB2009DB244 /* Orientation.swift in Sources */,
 				EBBE2FBE25910FFC005290DB /* Repository.swift in Sources */,
 				E2977D3B25911B37001C8E16 /* Match.swift in Sources */,
 				E2977D7A25913CC3001C8E16 /* Constants.swift in Sources */,

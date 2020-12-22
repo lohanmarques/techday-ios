@@ -17,16 +17,33 @@ class PlayerViewController: AVPlayerViewController {
 
             DispatchQueue.main.async {
                 self.player = AVPlayer(url: videoURL)
-                self.player?.play()
+                self.play()
             }
         }
     }
+    
+    var isPlaying: Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
         loopVideo()
+    }
+    
+    func play() {
+        self.player?.play()
+        self.isPlaying = true
+    }
+    
+    func pause() {
+        self.player?.pause()
+        self.isPlaying = false
+    }
+    
+    func replay() {
+        self.player?.seek(to: .zero)
+        self.play()
     }
     
     private func setUI() {
@@ -38,13 +55,8 @@ class PlayerViewController: AVPlayerViewController {
     }
     
     private func loopVideo() {
-        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { [weak self] _ in
-            guard let player = self?.player else {
-                return
-            }
-
-            player.seek(to: .zero)
-            player.play()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: nil, queue: nil) { _ in
+            self.replay()
         }
     }
 }
