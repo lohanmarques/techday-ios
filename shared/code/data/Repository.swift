@@ -14,18 +14,21 @@ enum CustomError: Error {
 final class Repository {
     
     func fetchMatches(completion: @escaping(Result<[Match], Error>) -> Void) {
-        do {
-            guard let path = Bundle.main.path(forResource: "matches", ofType: "json") else {
-                throw CustomError.jsonNotFound
+        // Dispatched on a secondary thread to simulate a network request behaviour
+        DispatchQueue.global().async {
+            do {
+                guard let path = Bundle.main.path(forResource: "matches", ofType: "json") else {
+                    throw CustomError.jsonNotFound
+                }
+
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                let response = try JSONDecoder().decode(Matches.self, from: data)
+
+                completion(.success(response.matches))
+
+            } catch {
+                completion(.failure(error))
             }
-            
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let response = try JSONDecoder().decode(Matches.self, from: data)
-            
-            completion(.success(response.matches))
-            
-        } catch {
-            completion(.failure(error))
         }
     }
 }
